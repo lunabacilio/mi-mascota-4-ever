@@ -7,10 +7,13 @@ import Login from './Login';
 import Register from './Register';
 import ProfileSelection from './ProfileSelection';
 import SuccessScreen from './SuccessScreen';
-import FormRegistration1 from './formscreens/adoptant/AdoptFormRegistration1';
-import FormRegistration2 from './formscreens/adoptant/AdoptFormRegistration2';
-import FormRegistration3 from './formscreens/adoptant/AdoptFormRegistration3';
+import AdoptFormRegistration1 from './formscreens/adoptant/AdoptFormRegistration1';
+import AdoptFormRegistration2 from './formscreens/adoptant/AdoptFormRegistration2';
+import AdoptFormRegistration3 from './formscreens/adoptant/AdoptFormRegistration3';
 import PetGallery from './PetGallery';
+import PetFormRegistration1 from './formscreens/pet/PetFormRegistration1';
+import PetFormRegistration2 from './formscreens/pet/PetFormRegistration2';
+import PetFormRegistration3 from './formscreens/pet/PetFormRegistration3';
 
 const Stack = createStackNavigator();
 
@@ -22,9 +25,12 @@ export default function App() {
         <Stack.Screen name="Login" component={Login} options={{ headerShown: false }}/>
         <Stack.Screen name="Register" component={Register} options={{ headerShown: false }}/>
         <Stack.Screen name="ProfileSelection" component={ProfileSelection} options={{ headerShown: false }}/>
-        <Stack.Screen name="FormRegistration1" component={FormRegistration1} options={{ headerShown:false }} />
-        <Stack.Screen name="FormRegistration2" component={FormRegistration2} options={{ headerShown:false }} />
-        <Stack.Screen name="FormRegistration3" component={FormRegistration3} options={{ headerShown:false }} />
+        <Stack.Screen name="AdoptFormRegistration1" component={AdoptFormRegistration1} options={{ headerShown:false }} />
+        <Stack.Screen name="AdoptFormRegistration2" component={AdoptFormRegistration2} options={{ headerShown:false }} />
+        <Stack.Screen name="AdoptFormRegistration3" component={AdoptFormRegistration3} options={{ headerShown:false }} />
+        <Stack.Screen name="PetFormRegistration1" component={PetFormRegistration1} options={{ headerShown: false }}/>
+        <Stack.Screen name="PetFormRegistration2" component={PetFormRegistration2} options={{ headerShown: false }}/>
+        <Stack.Screen name="PetFormRegistration3" component={PetFormRegistration3} options={{ headerShown: false }}/>
         <Stack.Screen name="PetGallery" component={PetGallery} options={{ headerShown: false }}/>
         <Stack.Screen name="SuccessScreen" component={SuccessScreen} options={{ headerShown: false }}/>
       </Stack.Navigator>

@@ -1,7 +1,22 @@
-import React from 'react';
-import { StyleSheet, Text, View, TouchableOpacity, Image } from 'react-native';
+import React, { useState, useEffect } from 'react';
+import { StyleSheet, Text, View, TouchableOpacity, ActivityIndicator, Image } from 'react-native';
+import Ionicons from 'react-native-vector-icons/Ionicons';
+import * as Font from 'expo-font';
+
+const fetchFonts = () => {
+  return Font.loadAsync({
+    'young-serif': require('./assets/fonts/YoungSerif-Regular.ttf'),
+    'work-sans': require('./assets/fonts/WorkSans.ttf'),
+  });
+};
 
 const ProfileSelection = ({ navigation }) => {
+  const [fontLoaded, setFontLoaded] = useState(false);
+
+  useEffect(() => {
+    fetchFonts().then(() => setFontLoaded(true));
+  }, []);
+
   const handleProfileSelection = (profile) => {
     // Handle profile selection logic here
     console.log('Selected Profile:', profile);
@@ -11,10 +26,17 @@ const ProfileSelection = ({ navigation }) => {
 
   return (
     <View style={styles.container}>
+      <TouchableOpacity style={styles.backButton} onPress={() => navigation.goBack()}>
+        <Ionicons name="arrow-back" size={30} color="black" />
+      </TouchableOpacity>
+      <Image
+        source={require('./assets/logo.png')} // Reemplaza con la ruta correcta de tu imagen
+        style={styles.logo}
+      />
       <Text style={styles.title}>Seleccione su perfil</Text>
       <View style={styles.profilesContainer}>
         <View style={styles.row}>
-          <TouchableOpacity style={[styles.profileButton, styles.pinkButton]} onPress={() => navigation.navigate('FormRegistration1')}>
+          <TouchableOpacity style={[styles.profileButton, styles.pinkButton]} onPress={() => navigation.navigate('AdoptFormRegistration1')}>
             <Image source={require('./assets/profiles/adopt.png')} style={styles.image} />
             <Text style={styles.profileButtonText}>Adoptante</Text>
           </TouchableOpacity>
@@ -24,7 +46,7 @@ const ProfileSelection = ({ navigation }) => {
           </TouchableOpacity>
         </View>
         <View style={styles.row}>
-          <TouchableOpacity style={[styles.profileButton, styles.blueButton]} onPress={() => handleProfileSelection('Veterinario')}>
+          <TouchableOpacity style={[styles.profileButton, styles.blueButton]} onPress={() => navigation.navigate('PetFormRegistration1')}>
             <Image source={require('./assets/profiles/donor.png')} style={styles.image} />
             <Text style={styles.profileButtonText}>Donador</Text>
           </TouchableOpacity>
@@ -49,7 +71,7 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 24,
     marginBottom: 20,
-    fontFamily: 'work-sans',
+    fontFamily: 'young-serif',
   },
   profilesContainer: {
     width: '100%',
@@ -60,6 +82,17 @@ const styles = StyleSheet.create({
     justifyContent: 'space-around',
     width: '100%',
     marginBottom: 20,
+  },
+  logo: {
+    width: 75,
+    height: 75,
+    marginBottom: 20,
+    marginTop: 30, // Ajusta este valor para mover el logo hacia abajo
+  },
+  backButton: {
+    position: 'absolute',
+    top: 40,
+    left: 20,
   },
   profileButton: {
     justifyContent: 'center',
