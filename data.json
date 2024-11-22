@@ -1,0 +1,14 @@
+[
+    {
+      "name": "Max",
+      "age": "2 años",
+      "type": "Perro",
+      "image": "perro.jpg"
+    },
+    {
+      "name": "Bella",
+      "age": "3 años",
+      "type": "Gato",
+      "image": "gato.jpg"
+    }
+  ]

@@ -1,0 +1,62 @@
+[
+    {
+      "name": "Max",
+      "age": "2 años",
+      "type": "Perro",
+      "image": "perro.jpg"
+    },
+    {
+      "name": "Bella",
+      "age": "3 años",
+      "type": "Gato",
+      "image": "gato.jpg"
+    },
+    {
+      "name": "Charlie",
+      "age": "1 año",
+      "type": "Perro",
+      "image": "https://example.com/images/charlie.jpg"
+    },
+    {
+      "name": "Luna",
+      "age": "4 años",
+      "type": "Gato",
+      "image": "https://example.com/images/luna.jpg"
+    },
+    {
+      "name": "Rocky",
+      "age": "5 años",
+      "type": "Perro",
+      "image": "https://example.com/images/rocky.jpg"
+    },
+    {
+      "name": "Milo",
+      "age": "2 años",
+      "type": "Gato",
+      "image": "https://example.com/images/milo.jpg"
+    },
+    {
+      "name": "Daisy",
+      "age": "3 años",
+      "type": "Perro",
+      "image": "https://example.com/images/daisy.jpg"
+    },
+    {
+      "name": "Simba",
+      "age": "1 año",
+      "type": "Gato",
+      "image": "https://example.com/images/simba.jpg"
+    },
+    {
+      "name": "Buddy",
+      "age": "4 años",
+      "type": "Perro",
+      "image": "https://example.com/images/buddy.jpg"
+    },
+    {
+      "name": "Nala",
+      "age": "5 años",
+      "type": "Gato",
+      "image": "https://example.com/images/nala.jpg"
+    }
+  ]

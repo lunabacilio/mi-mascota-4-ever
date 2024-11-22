@@ -1,9 +1,27 @@
-import React from 'react';
-import { StyleSheet, Text, View, TouchableOpacity, Button, Image } from 'react-native';
+import React, { useEffect, useState } from 'react';
+import { StyleSheet, Text, View, TouchableOpacity, Image, ActivityIndicator } from 'react-native';
+import * as Font from 'expo-font';
+
+const fetchFonts = () => {
+  return Font.loadAsync({
+    'young-serif': require('./assets/fonts/YoungSerif-Regular.ttf'),
+    'work-sans': require('./assets/fonts/WorkSans.ttf'),
+  });
+};
 
 const LandingPage = ({ navigation }) => {
-  const onLogin = () => {
-    navigation.navigate('Login');
+  const [fontLoaded, setFontLoaded] = useState(false);
+
+  useEffect(() => {
+    fetchFonts().then(() => setFontLoaded(true));
+  }, []);
+
+  if (!fontLoaded) {
+    return (
+      <View style={styles.loadingContainer}>
+        <ActivityIndicator size="large" color="#0000ff" />
+      </View>
+    );
   }
 
   return (
@@ -13,12 +31,8 @@ const LandingPage = ({ navigation }) => {
         style={styles.image}
       />
       <Text style={styles.title}>Bienvenido!</Text>
-      <Text style={styles.description}>
-        {'\n\n'}
-        Mi Mascota 4 Ever es una aplicación que conecta adoptantes, donadores de mascotas, veterinarios y patrocinadores de servicios en un mismo espacio. Su objetivo es facilitar el proceso de adopción, logrando el "match" ideal entre cada mascota y el adoptante adecuado.
-      </Text>
       <View style={styles.LoginbuttonContainer}>
-        <TouchableOpacity style={styles.Loginbutton} onPress={() => onLogin()}>
+        <TouchableOpacity style={styles.Loginbutton} onPress={() => navigation.navigate('Login')}>
           <Text style={styles.LoginbuttonText}>INICIAR SESIÓN</Text>
         </TouchableOpacity>
       </View>
@@ -39,28 +53,35 @@ const styles = StyleSheet.create({
     backgroundColor: '#E5C9D7',
     paddingTop: 50,
   },
+  loadingContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
   image: {
-    width: 390,
-    height: 294,
+    marginTop: 30,
+    width: 247,
+    height: 247,
     marginBottom: 10,
   },
   title: {
     fontSize: 24,
     marginBottom: 20,
+    fontFamily: 'young-serif',
   },
   description: {
     fontSize: 16,
     textAlign: 'center',
     marginHorizontal: 20,
     marginBottom: 60,
-    fontFamily: 'work-sans',
+    fontFamily: 'young-serif',
   },
   LoginbuttonContainer: {
     flexDirection: 'row',
     justifyContent: 'center',
     width: '80%',
     marginBottom: 20,
-    //marginTop: 20,
+    marginTop: 40,
   },
   Loginbutton: {
     justifyContent: 'center',
@@ -74,7 +95,7 @@ const styles = StyleSheet.create({
     color: 'white',
     fontSize: 16,
     fontWeight: '400',
-    fontFamily: 'work-sans',
+    fontFamily: 'work-sans', // Aplicar Work Sans a los botones
   },
   CreatebuttonContainer: {
     flexDirection: 'row',
@@ -94,7 +115,7 @@ const styles = StyleSheet.create({
     color: 'white',
     fontSize: 16,
     fontWeight: '400',
-    fontFamily: 'work-sans',
+    fontFamily: 'work-sans', // Aplicar Work Sans a los botones
   },
 });
 
