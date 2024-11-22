@@ -1,4 +1,10 @@
-[
+[ 
+    {
+      "name": "Belo",
+      "age": "2 años",
+      "type": "Hammster",
+      "image": "hammster.png"
+    },
     {
       "name": "Max",
       "age": "2 años",
@@ -16,11 +22,6 @@
       "age": "1 año",
       "type": "Axolotl",
       "image": "axolotl.png"
-    },
-    {
-      "name": "Belo",
-      "age": "2 años",
-      "type": "Hammster",
-      "image": "hammster.png"
     }
+    
   ]
