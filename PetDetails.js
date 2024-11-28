@@ -48,15 +48,20 @@ const PetDetails = ({ route, navigation }) => {
 
   return (
     <ScrollView contentContainerStyle={styles.scrollContainer}>
-      <View style={styles.logoContainer}>
-        <Image
-          source={require('./assets/logo.png')} // Reemplaza con la ruta correcta de tu imagen
-          style={styles.logo}
-        />
+      <View style={styles.headerContainer}>
+        <TouchableOpacity style={styles.backButton} onPress={() => navigation.goBack()}>
+          <Ionicons name="arrow-back" size={30} color="black" />
+        </TouchableOpacity>
+        <View style={styles.logoContainer}>
+          <Image
+            source={require('./assets/logo.png')} // Reemplaza con la ruta correcta de tu imagen
+            style={styles.logo}
+          />
+        </View>
+        <TouchableOpacity style={styles.favoriteButton}>
+          <Ionicons name="heart-outline" size={30} color="black" />
+        </TouchableOpacity>
       </View>
-      <TouchableOpacity style={styles.backButton} onPress={() => navigation.goBack()}>
-        <Ionicons name="arrow-back" size={30} color="black" />
-      </TouchableOpacity>
       <View style={styles.imageContainer}>
         <Image source={images[pet.image]} style={styles.image} />
       </View>
@@ -137,22 +142,31 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
+  headerContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    width: '100%',
+    paddingHorizontal: 16,
+    marginBottom: 10,
+    marginTop: 5,
+  },
   backButton: {
-    position: 'absolute',
-    top: 40,
-    left: 20,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   logoContainer: {
     justifyContent: 'center',
     alignItems: 'center',
-    marginBottom: 10,
-    marginTop: 5,
   },
   logo: {
     width: 40,
     height: 40,
     marginTop: 0, // Ajusta este valor para mover el logo hacia abajo
-    marginBottom: 20,
+  },
+  favoriteButton: {
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   imageContainer: {
     justifyContent: 'center',
