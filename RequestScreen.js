@@ -89,7 +89,7 @@ const RequestScreen = ({ navigation }) => {
         </View>
         <View style={styles.menuItem}>
           <TouchableOpacity style={styles.menuButton}>
-            <Ionicons name="paw-outline" size={30} color="black" />
+          <Image source={require('./assets/logo.png')} style={styles.menuLogo} />
           </TouchableOpacity>
           <Text style={styles.menuText}>Mis Adopciones</Text>
         </View>
@@ -123,9 +123,13 @@ const styles = StyleSheet.create({
     marginBottom: 10,
   },
   logo: {
-    width: 37.5, // Mitad del tamaño original
-    height: 37.5, // Mitad del tamaño original
-    marginTop: 15, // Ajusta este valor para mover el logo hacia abajo
+    width: 40, // Mitad del tamaño original
+    height: 40, // Mitad del tamaño original
+    marginTop: 40, // Ajusta este valor para mover el logo hacia abajo
+  },
+  menuLogo: {
+    width: 30,
+    height: 30,
   },
   title: {
     fontSize: 24,
