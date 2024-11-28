@@ -84,7 +84,7 @@ const AdoptantChat = ({ navigation }) => {
         </View>
         <View style={styles.menuItem}>
           <TouchableOpacity style={styles.menuButton}>
-            <Ionicons name="paw-outline" size={30} color="black" />
+          <Image source={require('./assets/logo.png')} style={styles.menuLogo} />
           </TouchableOpacity>
           <Text style={styles.menuText}>Mis Adopciones</Text>
         </View>
@@ -97,6 +97,10 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#E5C9D7',
+  },
+  menuLogo: {
+    width: 30,
+    height: 30,
   },
   scrollContainer: {
     padding: 16,
@@ -120,11 +124,11 @@ const styles = StyleSheet.create({
   logo: {
     width: 37.5, // Mitad del tamaño original
     height: 37.5, // Mitad del tamaño original
-    marginTop: 15, // Ajusta este valor para mover el logo hacia abajo
+    marginTop: 30, // Ajusta este valor para mover el logo hacia abajo
   },
   title: {
     fontSize: 24,
-    marginBottom: 20,
+    marginBottom: 40,
     fontFamily: 'young-serif',
     textAlign: 'center',
   },

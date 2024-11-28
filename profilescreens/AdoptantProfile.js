@@ -38,9 +38,11 @@ const AdoptantProfile = ({ navigation }) => {
           <Ionicons name="arrow-back" size={30} color="black" />
         </TouchableOpacity>
         <View style={styles.imageContainer}>
-        <Image source={require('../assets/profiles/adopt.png')} style={styles.profileImage} />
+          <View style={[styles.profileButton, styles.pinkButton]}>
+            <Image source={require('../assets/profiles/adopt.png')} style={styles.image} />
+          </View>
         </View>
-        <Text style={styles.title}>Perfil del Adoptante</Text>
+        <Text style={styles.title}>Eduardo</Text>
         <View style={styles.buttonWrapper}>
           <TouchableOpacity style={styles.mainButton} onPress={() => navigation.navigate('PetGallery')}>
             <Text style={styles.mainButtonText}>VER MASCOTAS EN</Text>
@@ -52,7 +54,6 @@ const AdoptantProfile = ({ navigation }) => {
           <TouchableOpacity style={styles.mainButton}>
             <Text style={styles.mainButtonText}>VER SERVICIOS</Text>
             <Text style={styles.mainButtonText}>DONADOS</Text>
-
           </TouchableOpacity>
         </View>
       </ScrollView>
@@ -62,7 +63,7 @@ const AdoptantProfile = ({ navigation }) => {
           <TouchableOpacity style={styles.menuButton}>
             <Ionicons name="person-circle-outline" size={30} color="black" />
           </TouchableOpacity>
-          <Text style={styles.menuText}>Editor Perfil</Text>
+          <Text style={styles.menuText}>Editar Perfil</Text>
         </View>
         <View style={styles.menuItem}>
           <TouchableOpacity style={styles.menuButton}>
@@ -78,7 +79,7 @@ const AdoptantProfile = ({ navigation }) => {
         </View>
         <View style={styles.menuItem}>
           <TouchableOpacity style={styles.menuButton}>
-            <Ionicons name="paw-outline" size={30} color="black" />
+          <Image source={require('../assets/logo.png')} style={styles.menuLogo} />
           </TouchableOpacity>
           <Text style={styles.menuText}>Mis Adopciones</Text>
         </View>
@@ -109,31 +110,38 @@ const styles = StyleSheet.create({
   logoContainer: {
     justifyContent: 'center',
     alignItems: 'center',
-    marginBottom: 45,
-    marginTop: 10, 
+    marginBottom: 30,
+    marginTop: 5, 
   },
   logo: {
-    width: 37.5, // Mitad del tamaño original
-    height: 37.5, // Mitad del tamaño original
+    width: 40, // Mitad del tamaño original
+    height: 40, // Mitad del tamaño original
     marginTop: 15, // Ajusta este valor para mover el logo hacia abajo
   },
-
   imageContainer: {
     justifyContent: 'center',
     alignItems: 'center',
   },
-  profileImage: {
-    width: '100%',
-    ///height: 200,
-   /// width: 200,
+  profileButton: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderRadius: 20,
+    marginVertical: 10,
+    padding: 10,
     width: 160,
     height: 196,
-    borderRadius: 10,
-    marginBottom: 20,
+  },
+  pinkButton: {
+    backgroundColor: '#C48CB3',
+  },
+  image: {
+    width: 130,
+    height: 130,
+    marginBottom: 5, // Add margin to separate image from text
   },
   title: {
     fontSize: 24,
-    marginBottom: 20,
+    marginBottom: 0,
     fontFamily: 'young-serif',
     textAlign: 'center',
   },
@@ -141,7 +149,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   mainButton: {
-    marginTop: 40,
+    marginTop: 30,
     marginBottom: 10,
     backgroundColor: '#0D1E4C',
     paddingVertical: 10,
@@ -153,7 +161,7 @@ const styles = StyleSheet.create({
   },
   mainButtonText: {
     color: 'white',
-    fontSize: 16,
+    fontSize: 14,
     fontWeight: '400',
     fontFamily: 'work-sans',
     textAlign: 'center',
@@ -184,7 +192,10 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     borderRadius: 10,
     marginBottom: 5,
-    //backgroundColor: '#0D1E4C',
+  },
+  menuLogo: {
+    width: 30,
+    height: 30,
   },
   menuText: {
     fontSize: 12,

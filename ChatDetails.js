@@ -24,7 +24,7 @@ const ChatDetails = ({ route, navigation }) => {
   const [fontLoaded, setFontLoaded] = useState(false);
   const [messages, setMessages] = useState([
     { id: 1, text: 'Hola, ¿cómo estás?', senderId: 1 },
-    { id: 2, text: 'Estoy bien, gracias. ¿Y tú?', senderId: 2 },
+    { id: 2, text: 'Me interesa el perrito', senderId: 2 },
   ]);
   const [newMessage, setNewMessage] = useState('');
 
@@ -108,7 +108,7 @@ const ChatDetails = ({ route, navigation }) => {
         </View>
         <View style={styles.menuItem}>
           <TouchableOpacity style={styles.menuButton}>
-            <Ionicons name="paw-outline" size={30} color="black" />
+            <Image source={require('./assets/logo.png')} style={styles.menuLogo} />
           </TouchableOpacity>
           <Text style={styles.menuText}>Mis Adopciones</Text>
         </View>
@@ -121,6 +121,10 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#E5C9D7',
+  },
+  menuLogo: {
+    width: 30,
+    height: 30,
   },
   scrollContainer: {
     padding: 16,
@@ -142,9 +146,9 @@ const styles = StyleSheet.create({
     marginBottom: 10,
   },
   logo: {
-    width: 37.5, // Mitad del tamaño original
-    height: 37.5, // Mitad del tamaño original
-    marginTop: 15, // Ajusta este valor para mover el logo hacia abajo
+    width: 40, // Mitad del tamaño original
+    height: 40, // Mitad del tamaño original
+    marginTop: 40, // Ajusta este valor para mover el logo hacia abajo
   },
   title: {
     fontSize: 24,
@@ -165,7 +169,7 @@ const styles = StyleSheet.create({
     maxWidth: '80%',
   },
   myMessage: {
-    backgroundColor: '#DCF8C6',
+    backgroundColor: '#C48CB3', // Cambiar a rosa
     alignSelf: 'flex-end',
   },
   theirMessage: {
@@ -186,10 +190,10 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     padding: 10,
-    backgroundColor: '#FFF',
+    backgroundColor: '#C48CB3',
     borderTopWidth: 1,
     borderColor: '#CCC',
-    marginBottom: 60, // Añadir espacio para el menú inferior
+    marginBottom: 75, // Añadir espacio para el menú inferior
   },
   textInput: {
     flex: 1,
@@ -199,6 +203,7 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     marginRight: 10,
     fontFamily: 'work-sans',
+    backgroundColor: '#E5C9D7',
   },
   sendButton: {
     backgroundColor: '#0D1E4C',

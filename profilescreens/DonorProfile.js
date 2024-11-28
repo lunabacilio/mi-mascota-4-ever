@@ -37,11 +37,16 @@ const DonorProfile = ({ navigation }) => {
         <TouchableOpacity style={styles.backButton} onPress={() => navigation.goBack()}>
           <Ionicons name="arrow-back" size={30} color="black" />
         </TouchableOpacity>
-        <Image source={require('../assets/profiles/adopt.png')} style={styles.profileImage} />
-        <Text style={styles.title}>Perfil del Donador</Text>
+        <View style={styles.imageContainer}>
+          <View style={[styles.profileButton, styles.pinkButton]}>
+            <Image source={require('../assets/profiles/donor.png')} style={styles.image} />
+          </View>
+        </View>
+        <Text style={styles.title}>Ernesto</Text>
         <View style={styles.buttonWrapper}>
           <TouchableOpacity style={styles.mainButton} onPress={() => navigation.navigate('RequestScreen')}>
-            <Text style={styles.mainButtonText}>Solicitudes de Adopciones</Text>
+            <Text style={styles.mainButtonText}>SOLICITUDES DE</Text>
+            <Text style={styles.mainButtonText}>ADOPCIONES</Text>
           </TouchableOpacity>
         </View>
       </ScrollView>
@@ -66,7 +71,7 @@ const DonorProfile = ({ navigation }) => {
           <Text style={styles.menuText}>Mis Chats</Text>
         </View>
         <View style={styles.menuItem}>
-          <TouchableOpacity style={styles.menuButton}>
+          <TouchableOpacity style={styles.menuButton} onPress={() => navigation.navigate('EditPetGallery')}>
             <Ionicons name="create-outline" size={30} color="black" />
           </TouchableOpacity>
           <Text style={styles.menuText}>Editar Mascotas</Text>
@@ -98,18 +103,34 @@ const styles = StyleSheet.create({
   logoContainer: {
     justifyContent: 'center',
     alignItems: 'center',
-    marginBottom: 10,
+    marginBottom: 45,
+    marginTop: 10, 
   },
   logo: {
     width: 37.5, // Mitad del tamaño original
     height: 37.5, // Mitad del tamaño original
     marginTop: 15, // Ajusta este valor para mover el logo hacia abajo
   },
-  profileImage: {
-    width: '100%',
-    height: 200,
-    borderRadius: 10,
-    marginBottom: 20,
+  imageContainer: {
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  profileButton: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderRadius: 20,
+    marginVertical: 10,
+    padding: 10,
+    width: 160,
+    height: 196,
+  },
+  pinkButton: {
+    backgroundColor: '#0D1E4C',
+  },
+  image: {
+    width: 130,
+    height: 130,
+    marginBottom: 5, // Add margin to separate image from text
   },
   title: {
     fontSize: 24,
@@ -121,18 +142,21 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   mainButton: {
-    marginTop: 10,
+    marginTop: 40,
+    marginBottom: 10,
     backgroundColor: '#0D1E4C',
     paddingVertical: 10,
     paddingHorizontal: 20,
-    borderRadius: 5,
+    borderRadius: 15,
     alignItems: 'center',
     width: 308,
     height: 59,
+    fontWeight: 'bold',
+    fontFamily: 'work-sans',
   },
   mainButtonText: {
     color: 'white',
-    fontSize: 16,
+    fontSize: 14,
     fontWeight: '400',
     fontFamily: 'work-sans',
     textAlign: 'center',
@@ -163,6 +187,10 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     borderRadius: 10,
     marginBottom: 5,
+  },
+  menuLogo: {
+    width: 30,
+    height: 30,
   },
   menuText: {
     fontSize: 12,

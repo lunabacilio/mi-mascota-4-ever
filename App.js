@@ -20,6 +20,8 @@ import DonorProfile from './profilescreens/DonorProfile';
 import AdoptantChat from './AdoptantChat';
 import ChatDetails from './ChatDetails';
 import RequestScreen from './RequestScreen';
+import EditPetGallery from './EditPetGallery';
+import EditPetDetails from './EditPetDetails';
 
 const Stack = createStackNavigator();
 
@@ -45,6 +47,8 @@ export default function App() {
         <Stack.Screen name="AdoptantChat" component={AdoptantChat} options={{ headerShown: false }}/>
         <Stack.Screen name="ChatDetails" component={ChatDetails} options={{ headerShown: false }}/>
         <Stack.Screen name="RequestScreen" component={RequestScreen} options={{ headerShown: false }}/>
+        <Stack.Screen name="EditPetGallery" component={EditPetGallery} options={{ headerShown: false }}/>
+        <Stack.Screen name="EditPetDetails" component={EditPetDetails} options={{ headerShown: false }}/>
       </Stack.Navigator>
     </NavigationContainer>
   );
