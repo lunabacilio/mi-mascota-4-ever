@@ -74,17 +74,19 @@ const EditPetDetails = ({ route, navigation }) => {
   }
 
   return (
-    <ScrollView style={styles.container}>
+    <ScrollView contentContainerStyle={styles.scrollContainer}>
       <View style={styles.logoContainer}>
         <Image
           source={require('./assets/logo.png')} // Reemplaza con la ruta correcta de tu imagen
           style={styles.logo}
         />
       </View>
-      <Image source={images[pet.image]} style={styles.image} />
       <TouchableOpacity style={styles.backButton} onPress={() => navigation.goBack()}>
         <Ionicons name="arrow-back" size={30} color="black" />
       </TouchableOpacity>
+      <View style={styles.imageContainer}>
+        <Image source={images[pet.image]} style={styles.image} />
+      </View>
       <Text style={styles.title}>{pet.name}</Text>
       <View style={styles.buttonContainer}>
         <TouchableOpacity style={styles.detailsButton} onPress={() => toggleSection('basicInfo')}>
@@ -301,6 +303,12 @@ const styles = StyleSheet.create({
     padding: 16,
     backgroundColor: '#E5C9D7',
   },
+  scrollContainer: {
+    flexGrow: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#E5C9D7',
+  },
   loadingContainer: {
     flex: 1,
     justifyContent: 'center',
@@ -315,50 +323,61 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     marginBottom: 10,
-    marginTop: 15,
+    marginTop: 5,
   },
   logo: {
-    width: 37.5, // Mitad del tamaño original
-    height: 37.5, // Mitad del tamaño original
-    marginTop: 15, // Ajusta este valor para mover el logo hacia abajo
+    width: 40,
+    height: 40,
+    marginTop: 0, // Ajusta este valor para mover el logo hacia abajo
+    marginBottom: 20,
+  },
+  imageContainer: {
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   image: {
-    width: '100%',
-    height: 200,
+    width: 250,
+    height: 250,
     borderRadius: 10,
     marginBottom: 20,
   },
   title: {
     fontSize: 24,
-    marginBottom: 20,
+    marginBottom: 5,
     fontFamily: 'young-serif',
     textAlign: 'center',
   },
   buttonContainer: {
     alignItems: 'center',
+    width: '100%',
+  },
+  section: {
+    marginBottom: 20,
+    alignItems: 'center',
   },
   detailsButton: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'space-between',
+    marginTop: 10,
     backgroundColor: '#0D1E4C',
     paddingVertical: 10,
     paddingHorizontal: 20,
-    borderRadius: 5,
-    marginBottom: 10,
-    width: '90%',
-  },
-  editIcon: {
-    marginRight: 10,
+    borderRadius: 10,
+    alignItems: 'center',
+    flexDirection: 'row',
+    justifyContent: 'center',
+    width: 308,
+    height: 59,
   },
   detailsButtonText: {
     color: 'white',
     fontSize: 16,
     fontWeight: '400',
     fontFamily: 'work-sans',
+    textAlign: 'center',
+    flex: 1,
   },
-  section: {
-    marginBottom: 20,
+  icon: {
+    position: 'absolute',
+    right: 20,
   },
   input: {
     backgroundColor: '#fff',
@@ -367,6 +386,10 @@ const styles = StyleSheet.create({
     marginBottom: 10,
     borderWidth: 1,
     borderColor: '#ccc',
+    width: '250',
+    height: 40,
+    justifyContent: 'center',
+    alignItems: 'center',    
   },
   saveButton: {
     backgroundColor: '#0D1E4C',
@@ -374,12 +397,14 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20,
     borderRadius: 5,
     alignItems: 'center',
+    width: '90%',
   },
   saveButtonText: {
     color: 'white',
     fontSize: 16,
     fontWeight: '400',
     fontFamily: 'work-sans',
+    textAlign: 'center',
   },
 });
 
