@@ -186,8 +186,8 @@ const PetFormRegistration3 = ({ navigation }) => {
           ))}
         </View>
       </View>
-      <TouchableOpacity style={styles.button} onPress={handleFormRegistration3}>
-        <Text style={styles.buttonText}>Enviar</Text>
+      <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('DonorProfile')}>
+        <Text style={styles.buttonText}>ENVIAR</Text>
       </TouchableOpacity>
     </View>
   );

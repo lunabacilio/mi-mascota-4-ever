@@ -1,0 +1,16 @@
+[
+    {
+      "id": 1,
+      "requesterName": "Carlos Martínez",
+      "requesterId": 1,
+      "petImage": "perro.jpg",
+      "petName": "Firulais"
+    },
+    {
+      "id": 2,
+      "requesterName": "Ana Gómez",
+      "requesterId": 2,
+      "petImage": "gato.jpg",
+      "petName": "Michi"
+    }
+]

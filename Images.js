@@ -3,6 +3,8 @@ const images = {
     'perro.jpg': require('./assets/images/perro.jpg'),
     'gato.jpg': require('./assets/images/gato.jpg'),
     'axolotl.png': require('./assets/images/axolotl.png'),
+    'monge.jpg': require('./assets/users/monge.jpg'),
+    'silvia.jpg': require('./assets/users/silvia.jpg'),
 };
 
 export default images;

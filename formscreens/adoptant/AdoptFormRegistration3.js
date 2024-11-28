@@ -129,7 +129,7 @@ const AdoptFormRegistration3 = ({ navigation }) => {
           placeholder="Seleccione el motivo principal de adopción"
         />
       </View>
-      <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('PetGallery')}>
+      <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('AdoptantProfile')}>
         <Text style={styles.buttonText}>GUARDAR</Text>
       </TouchableOpacity>
     </View>

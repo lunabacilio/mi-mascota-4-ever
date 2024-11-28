@@ -5,8 +5,8 @@ import * as Font from 'expo-font';
 
 const fetchFonts = () => {
   return Font.loadAsync({
-    'young-serif': require('./assets/fonts/YoungSerif-Regular.ttf'),
-    'work-sans': require('./assets/fonts/WorkSans.ttf'),
+    'young-serif': require('../assets/fonts/YoungSerif-Regular.ttf'),
+    'work-sans': require('../assets/fonts/WorkSans.ttf'),
   });
 };
 
@@ -30,28 +30,28 @@ const ProfileSelection = ({ navigation }) => {
         <Ionicons name="arrow-back" size={30} color="black" />
       </TouchableOpacity>
       <Image
-        source={require('./assets/logo.png')} // Reemplaza con la ruta correcta de tu imagen
+        source={require('../assets/logo.png')} // Reemplaza con la ruta correcta de tu imagen
         style={styles.logo}
       />
       <Text style={styles.title}>Seleccione su perfil</Text>
       <View style={styles.profilesContainer}>
         <View style={styles.row}>
           <TouchableOpacity style={[styles.profileButton, styles.pinkButton]} onPress={() => navigation.navigate('AdoptFormRegistration1')}>
-            <Image source={require('./assets/profiles/adopt.png')} style={styles.image} />
+            <Image source={require('../assets/profiles/adopt.png')} style={styles.image} />
             <Text style={styles.profileButtonText}>Adoptante</Text>
           </TouchableOpacity>
           <TouchableOpacity style={[styles.profileButton, styles.blueButton]} onPress={() => handleProfileSelection('Donador')}>
-            <Image source={require('./assets/profiles/vet.png')} style={styles.image} />
+            <Image source={require('../assets/profiles/vet.png')} style={styles.image} />
             <Text style={styles.profileButtonText}>Veterinario</Text>
           </TouchableOpacity>
         </View>
         <View style={styles.row}>
           <TouchableOpacity style={[styles.profileButton, styles.blueButton]} onPress={() => navigation.navigate('PetFormRegistration1')}>
-            <Image source={require('./assets/profiles/donor.png')} style={styles.image} />
+            <Image source={require('../assets/profiles/donor.png')} style={styles.image} />
             <Text style={styles.profileButtonText}>Donador</Text>
           </TouchableOpacity>
           <TouchableOpacity style={[styles.profileButton, styles.pinkButton]} onPress={() => handleProfileSelection('Patrocinador')}>
-            <Image source={require('./assets/profiles/pet.png')} style={styles.image} />
+            <Image source={require('../assets/profiles/pet.png')} style={styles.image} />
             <Text style={styles.profileButtonText}>Patrocinador</Text>
           </TouchableOpacity>
         </View>

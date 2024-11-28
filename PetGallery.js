@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { StyleSheet, Text, View, TouchableOpacity, FlatList, ActivityIndicator, Image } from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
-import data from './data.json';
+import pet from './pet.json';
 import images from './Images';
 import * as Font from 'expo-font';
 
@@ -30,7 +30,7 @@ const PetGallery = ({ navigation }) => {
   const renderItem = ({ item }) => (
     <View style={styles.itemContainer}>
       <Image source={images[item.image]} style={styles.image} />
-      <TouchableOpacity style={styles.detailsButton} onPress={() => navigation.navigate('PetDetails', { pet: item })}>
+      <TouchableOpacity style={styles.detailsButton} onPress={() => navigation.navigate('PetDetails', { petId: item.id })}>
         <Text style={styles.detailsButtonText}>Ver detalles</Text>
       </TouchableOpacity>
     </View>
@@ -49,9 +49,9 @@ const PetGallery = ({ navigation }) => {
       </View>
       <Text style={styles.title}>Galería de Mascotas</Text>
       <FlatList
-        data={data}
+        data={pet}
         renderItem={renderItem}
-        keyExtractor={(item) => item.name}
+        keyExtractor={(item) => item.id.toString()}
         contentContainerStyle={styles.galleryContainer}
         numColumns={2} // Set the number of columns to 2
       />

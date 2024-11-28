@@ -5,7 +5,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import LandingPage from './LandingPage';
 import Login from './Login';
 import Register from './Register';
-import ProfileSelection from './ProfileSelection';
+import ProfileSelection from './profilescreens/ProfileSelection';
 import SuccessScreen from './SuccessScreen';
 import AdoptFormRegistration1 from './formscreens/adoptant/AdoptFormRegistration1';
 import AdoptFormRegistration2 from './formscreens/adoptant/AdoptFormRegistration2';
@@ -14,6 +14,12 @@ import PetGallery from './PetGallery';
 import PetFormRegistration1 from './formscreens/pet/PetFormRegistration1';
 import PetFormRegistration2 from './formscreens/pet/PetFormRegistration2';
 import PetFormRegistration3 from './formscreens/pet/PetFormRegistration3';
+import PetDetails from './PetDetails';
+import AdoptantProfile from './profilescreens/AdoptantProfile';
+import DonorProfile from './profilescreens/DonorProfile';
+import AdoptantChat from './AdoptantChat';
+import ChatDetails from './ChatDetails';
+import RequestScreen from './RequestScreen';
 
 const Stack = createStackNavigator();
 
@@ -32,7 +38,13 @@ export default function App() {
         <Stack.Screen name="PetFormRegistration2" component={PetFormRegistration2} options={{ headerShown: false }}/>
         <Stack.Screen name="PetFormRegistration3" component={PetFormRegistration3} options={{ headerShown: false }}/>
         <Stack.Screen name="PetGallery" component={PetGallery} options={{ headerShown: false }}/>
+        <Stack.Screen name="PetDetails" component={PetDetails} options={{ headerShown: false }}/>
         <Stack.Screen name="SuccessScreen" component={SuccessScreen} options={{ headerShown: false }}/>
+        <Stack.Screen name="AdoptantProfile" component={AdoptantProfile} options={{ headerShown: false }}/>
+        <Stack.Screen name="DonorProfile" component={DonorProfile} options={{ headerShown: false }}/>
+        <Stack.Screen name="AdoptantChat" component={AdoptantChat} options={{ headerShown: false }}/>
+        <Stack.Screen name="ChatDetails" component={ChatDetails} options={{ headerShown: false }}/>
+        <Stack.Screen name="RequestScreen" component={RequestScreen} options={{ headerShown: false }}/>
       </Stack.Navigator>
     </NavigationContainer>
   );
