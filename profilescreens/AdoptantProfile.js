@@ -37,17 +37,22 @@ const AdoptantProfile = ({ navigation }) => {
         <TouchableOpacity style={styles.backButton} onPress={() => navigation.goBack()}>
           <Ionicons name="arrow-back" size={30} color="black" />
         </TouchableOpacity>
+        <View style={styles.imageContainer}>
         <Image source={require('../assets/profiles/adopt.png')} style={styles.profileImage} />
+        </View>
         <Text style={styles.title}>Perfil del Adoptante</Text>
         <View style={styles.buttonWrapper}>
           <TouchableOpacity style={styles.mainButton} onPress={() => navigation.navigate('PetGallery')}>
-            <Text style={styles.mainButtonText}>Ver Mascotas en Adopción</Text>
+            <Text style={styles.mainButtonText}>VER MASCOTAS EN</Text>
+            <Text style={styles.mainButtonText}>ADOPCIÓN</Text>
           </TouchableOpacity>
           <TouchableOpacity style={styles.mainButton}>
-            <Text style={styles.mainButtonText}>Ver Veterinarios</Text>
+            <Text style={styles.mainButtonText}>VER VETERINARIOS</Text>
           </TouchableOpacity>
           <TouchableOpacity style={styles.mainButton}>
-            <Text style={styles.mainButtonText}>Ver Servicios Donados</Text>
+            <Text style={styles.mainButtonText}>VER SERVICIOS</Text>
+            <Text style={styles.mainButtonText}>DONADOS</Text>
+
           </TouchableOpacity>
         </View>
       </ScrollView>
@@ -104,16 +109,25 @@ const styles = StyleSheet.create({
   logoContainer: {
     justifyContent: 'center',
     alignItems: 'center',
-    marginBottom: 10,
+    marginBottom: 45,
+    marginTop: 10, 
   },
   logo: {
     width: 37.5, // Mitad del tamaño original
     height: 37.5, // Mitad del tamaño original
     marginTop: 15, // Ajusta este valor para mover el logo hacia abajo
   },
+
+  imageContainer: {
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
   profileImage: {
     width: '100%',
-    height: 200,
+    ///height: 200,
+   /// width: 200,
+    width: 160,
+    height: 196,
     borderRadius: 10,
     marginBottom: 20,
   },
@@ -127,11 +141,12 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   mainButton: {
-    marginTop: 10,
+    marginTop: 40,
+    marginBottom: 10,
     backgroundColor: '#0D1E4C',
     paddingVertical: 10,
     paddingHorizontal: 20,
-    borderRadius: 5,
+    borderRadius: 15,
     alignItems: 'center',
     width: 308,
     height: 59,
